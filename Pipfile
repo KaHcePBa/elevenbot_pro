@@ -1,16 +1,17 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
+name = "pypi"
 
 [dev-packages]
 
 [packages]
-aiogram = "==2.25.1"
+aiogram = "*"
 dynaconf = "*"
 aioschedule = "*"
-requests = ">=2.31.0"
-openai = "==0.28"
+openai = "*"
+requests = "*"
 
 [requires]
-python_version = "3.9"
+python_version = "3.13"
+python_full_version = "3.13.0"
