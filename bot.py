@@ -1,6 +1,8 @@
 import asyncio
-import datetime
+import os
+# import datetime
 import logging
+import os
 
 # import aioschedule
 from aiogram import Bot, Dispatcher, Router
@@ -30,7 +32,8 @@ settings = LazySettings(
 )
 
 # Инициализация бота и основного роутера
-bot = Bot(token=settings.BOT_TOKEN)
+bot = Bot(token=os.getenv('BOT_TOKEN'))
+# bot = Bot(token=settings.BOT_TOKEN)
 router = Router()
 
 
