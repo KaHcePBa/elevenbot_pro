@@ -1,9 +1,11 @@
 import os
 
 import requests
-from dynaconf import LazySettings
 
-settings = LazySettings(settings_files=["settings.yaml", ".secrets.yaml"], environments=True, env="development")
+
+# from dynaconf import LazySettings
+#
+# settings = LazySettings(settings_files=["settings.yaml", ".secrets.yaml"], environments=True, env="development")
 
 
 def get_weather(city_name: str) -> dict:
@@ -16,7 +18,6 @@ def get_weather(city_name: str) -> dict:
 
 
 def get_wind_direction(degree: float) -> str:
-
     # Преобразует числовое значение направления ветра в текстовый формат.
 
     if 337.5 <= degree < 22.5:

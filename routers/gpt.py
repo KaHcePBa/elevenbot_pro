@@ -1,26 +1,26 @@
 import logging
-
+import os
 import openai
 from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
-from dynaconf import LazySettings
+# from dynaconf import LazySettings
 from openai import AsyncOpenAI
 
 # Simply import AsyncOpenAI instead of OpenAI and use await with each API call. More info: https://github.com/openai/openai-python?tab=readme-ov-file#async-usage
 
-settings = LazySettings(
-    settings_files=["settings.yaml", ".secrets.yaml"],  # Указываем YAML-файлы
-    environments=True,  # Активируем поддержку окружений
-    env="development"  # Устанавливаем окружение по умолчанию
-)
+# settings = LazySettings(
+#     settings_files=["settings.yaml", ".secrets.yaml"],  # Указываем YAML-файлы
+#     environments=True,  # Активируем поддержку окружений
+#     env="development"  # Устанавливаем окружение по умолчанию
+# )
 
 # Создаем отдельный Router для описания
 gpt_router = Router()
 
 # Устанавливаем API-ключи
 client = AsyncOpenAI(
-    api_key=settings.OPENAI_APIKEY,  # This is the default and can be omitted
+    api_key=os.getenv('OPENAI_APIKEY'),  # This is the default and can be omitted
 )
 
 

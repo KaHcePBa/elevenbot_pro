@@ -1,12 +1,13 @@
 from aiogram import Router
 from aiogram.types import Message
-from dynaconf import LazySettings
 
-settings = LazySettings(
-    settings_files=["settings.yaml", ".secrets.yaml"],  # Указываем YAML-файлы
-    environments=True,  # Активируем поддержку окружений
-    env="development"  # Устанавливаем окружение по умолчанию
-)
+# from dynaconf import LazySettings
+#
+# settings = LazySettings(
+#     settings_files=["settings.yaml", ".secrets.yaml"],  # Указываем YAML-файлы
+#     environments=True,  # Активируем поддержку окружений
+#     env="development"  # Устанавливаем окружение по умолчанию
+# )
 
 # Создаем отдельный Router для описания
 react_router = Router()

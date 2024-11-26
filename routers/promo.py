@@ -5,6 +5,7 @@ from aiogram.types import Message
 # Создаем отдельный Router для описания
 promo_router = Router()
 
+
 # Подключение других обработчиков
 @promo_router.message(Command("promocodes"))
 async def promo_message(message: Message):

@@ -1,12 +1,11 @@
 import asyncio
-# import os
 # import datetime
 import logging
 import os
 
 # import aioschedule
 from aiogram import Bot, Dispatcher, Router
-from dynaconf import LazySettings
+# from dynaconf import LazySettings
 
 # Импорт Routers
 from routers.description import description_router  # Импорт роутера с командой дескрипшн
@@ -25,11 +24,11 @@ logging.basicConfig(
 )
 logging.info('Start running...')
 
-settings = LazySettings(
-    settings_files=["settings.yaml", ".secrets.yaml"],  # Указываем YAML-файлы
-    environments=True,  # Активируем поддержку окружений
-    env="development"  # Устанавливаем окружение по умолчанию
-)
+# settings = LazySettings(
+#     settings_files=["settings.yaml", ".secrets.yaml"],  # Указываем YAML-файлы
+#     environments=True,  # Активируем поддержку окружений
+#     env="development"  # Устанавливаем окружение по умолчанию
+# )
 
 # Инициализация бота и основного роутера
 bot = Bot(token=os.getenv('BOT_TOKEN'))
