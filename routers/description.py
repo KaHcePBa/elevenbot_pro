@@ -8,7 +8,7 @@ description_router = Router()
 desc_message = """
 <b>Voice-recognition technology?</b> In a lift? In Scotland?\nYou ever tried voice-recognition technology?\n
 👇 Delivered functions: 👇
-1️⃣✅ <b>''' /weather city '''</b> to get weather for now
+1️⃣✅ <b>''' /weather city '''</b> to get weather for now 
 2️⃣❌ <i> [depreciated] </i> check birthdays and pin congrats with notify
 3️⃣❌ <i> [depreciated] </i> <b>''' /gpt your question '''</b> ChatGPT 
 """
