@@ -1,3 +1,5 @@
+import os
+
 import requests
 from dynaconf import LazySettings
 
@@ -6,7 +8,8 @@ settings = LazySettings(settings_files=["settings.yaml", ".secrets.yaml"], envir
 
 def get_weather(city_name: str) -> dict:
     # Получает данные о погоде для указанного города через OpenWeatherMap API.
-    api_key = settings.WEATHER_APIKEY
+    api_key = os.getenv('WEATHER_APIKEY')
+    # api_key = settings.WEATHER_APIKEY
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city_name}&units=metric&lang=ru&appid={api_key}'
     response = requests.get(url)
     return response.json()
