@@ -5,16 +5,16 @@ import os
 
 # import aioschedule
 from aiogram import Bot, Dispatcher, Router
-# from dynaconf import LazySettings
 
 # Импорт Routers
 from routers.description import description_router  # Импорт роутера с командой дескрипшн
+from routers.gpt import gpt_router  # Импорт роутера gpt
 from routers.pnn import pravo_router
 from routers.promo import promo_router
 from routers.reaction import react_router
 from routers.weather_router import weather_router
 
-# from routers.gpt import gpt_router  # Импорт роутера gpt
+# from dynaconf import LazySettings
 
 # Логирование
 logging.basicConfig(
@@ -91,7 +91,7 @@ async def main():
     dp = Dispatcher()
     # Подключаем Router. Если создаю новый Router, то добавляю его сюда. Могу и отключать их здесь.
     dp.include_router(description_router)  # Роутер для /description
-    # dp.include_router(gpt_router)
+    dp.include_router(gpt_router)
     dp.include_router(pravo_router)
     dp.include_router(weather_router)
     dp.include_router(promo_router)
