@@ -4,27 +4,13 @@ import openai
 from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
-# from dynaconf import LazySettings
-from openai import AsyncOpenAI
-
-# Simply import AsyncOpenAI instead of OpenAI and use await with each API call. More info: https://github.com/openai/openai-python?tab=readme-ov-file#async-usage
-
-# settings = LazySettings(
-#     settings_files=["settings.yaml", ".secrets.yaml"],  # Указываем YAML-файлы
-#     environments=True,  # Активируем поддержку окружений
-#     env="development"  # Устанавливаем окружение по умолчанию
-# )
 
 # Создаем отдельный Router для описания
 gpt_router = Router()
 
-# Устанавливаем API-ключи
-client = AsyncOpenAI(
-    api_key=os.getenv('OPENAI_APIKEY'),  # This is the default and can be omitted
-)
+# Устанавливаем API-ключ для OpenAI
+openai.api_key = os.getenv('OPENAI_APIKEY')
 
-
-# ToDo
 @gpt_router.message(Command("gpt"))
 async def gpt_response(message: Message):
     try:
@@ -36,8 +22,8 @@ async def gpt_response(message: Message):
 
     try:
         # Асинхронный вызов ChatCompletion
-        response = await client.chat.completions.create(
-            model="gpt-4o-mini",
+        response = await openai.ChatCompletion.acreate(
+            model="gpt-4",  # Убедитесь, что используете доступную модель
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": question},
