@@ -1,19 +1,14 @@
-import asyncio
 import os
 
-# import openai
-from openai import AsyncOpenAI
 from aiogram import F
 from aiogram import Router
 from aiogram.types import Message
+from openai import AsyncOpenAI
 
 # Создаем отдельный Router для описания
 gpt_router = Router()
 
-# openai.api_key = os.getenv('OPENAI_APIKEY')
-
 client = AsyncOpenAI(api_key=os.getenv('OPENAI_APIKEY'))
-
 
 
 async def get_gpt_response(user_question: str) -> str:
