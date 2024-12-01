@@ -2,6 +2,7 @@ import asyncio
 import os
 
 import openai
+from openai import AsyncOpenAI
 from aiogram import F
 from aiogram import Router
 from aiogram.types import Message
@@ -9,6 +10,7 @@ from aiogram.types import Message
 # Создаем отдельный Router для описания
 gpt_router = Router()
 
+client = AsyncOpenAI()
 # Устанавливаем API-ключ для OpenAI
 openai.api_key = os.getenv('OPENAI_APIKEY')
 
@@ -18,7 +20,7 @@ async def get_gpt_response(user_question: str) -> str:
     Обращается к OpenAI API и получает ответ от модели.
     """
     try:
-        response = await openai.ChatCompletion.acreate(
+        response = await client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
@@ -44,11 +46,3 @@ async def handle_gpt_command(message: Message):
     await message.answer("Думаю над ответом...")
     gpt_response = await get_gpt_response(user_question)
     await message.answer(gpt_response)
-
-    # # Извлекаем текст ответа
-    # answer = response["choices"][0]["message"]["content"]
-    # await message.answer(answer)
-
-    # except openai.OpenAIError as e:
-    #     logging.error(f"Ошибка OpenAI: {e}")
-    #     await message.answer("Произошла ошибка при обработке вашего запроса.")
