@@ -27,7 +27,7 @@ async def get_gpt_response(user_question: str) -> str:
                 {"role": "user", "content": user_question}
             ]
         )
-        return response.choices[0].message["content"]
+        return response.choices[0].message.content
     except Exception as e:
         return f"Ошибка при запросе к OpenAI API: {e}"
 
