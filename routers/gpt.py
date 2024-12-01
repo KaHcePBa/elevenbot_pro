@@ -1,8 +1,9 @@
-import logging
+import asyncio
 import os
+
 import openai
+from aiogram import F
 from aiogram import Router
-from aiogram.filters import Command
 from aiogram.types import Message
 
 # Создаем отдельный Router для описания
@@ -11,31 +12,44 @@ gpt_router = Router()
 # Устанавливаем API-ключ для OpenAI
 openai.api_key = os.getenv('OPENAI_APIKEY')
 
-@gpt_router.message(Command("gpt"))
-async def gpt_response(message: Message):
-    try:
-        # Извлекаем вопрос пользователя
-        question = message.text.split(" ", maxsplit=1)[1]
-    except IndexError:
-        await message.answer("Вы забыли указать вопрос.")
-        return
 
+async def get_gpt_response(user_question: str) -> str:
+    """
+    Обращается к OpenAI API и получает ответ от модели.
+    """
     try:
-        # Асинхронный вызов ChatCompletion
-        response = await openai.ChatCompletion.acreate(
-            model="gpt-4",  # Убедитесь, что используете доступную модель
+        response = await asyncio.to_thread(
+            openai.ChatCompletion.create,
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": question},
-            ],
-            max_tokens=500,
-            temperature=0.7
+                {"role": "user", "content": user_question}
+            ]
         )
+        return response['choices'][0]['message']['content']
+    except Exception as e:
+        return f"Ошибка при запросе к OpenAI API: {e}"
 
-        # Извлекаем текст ответа
-        answer = response["choices"][0]["message"]["content"]
-        await message.answer(answer)
 
-    except openai.OpenAIError as e:
-        logging.error(f"Ошибка OpenAI: {e}")
-        await message.answer("Произошла ошибка при обработке вашего запроса.")
+@gpt_router.message(F.text.startswith('/gpt'))
+async def handle_gpt_command(message: Message):
+    """
+    Обрабатывает команду /gpt и отвечает пользователю.
+    """
+    # Извлекаем вопрос из команды
+    user_question = message.text.lstrip('/gpt').strip()
+    if not user_question:
+        await message.answer("Пожалуйста, напишите вопрос после команды /gpt.")
+        return
+
+    await message.answer("Думаю над ответом...")
+    gpt_response = await get_gpt_response(user_question)
+    await message.answer(gpt_response)
+
+    # # Извлекаем текст ответа
+    # answer = response["choices"][0]["message"]["content"]
+    # await message.answer(answer)
+
+    # except openai.OpenAIError as e:
+    #     logging.error(f"Ошибка OpenAI: {e}")
+    #     await message.answer("Произошла ошибка при обработке вашего запроса.")
