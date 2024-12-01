@@ -18,15 +18,14 @@ async def get_gpt_response(user_question: str) -> str:
     Обращается к OpenAI API и получает ответ от модели.
     """
     try:
-        response = await asyncio.to_thread(
-            openai.ChatCompletion.create,
-            model="gpt-4o",
+        response = await openai.ChatCompletion.acreate(
+            model="gpt-4",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": user_question}
             ]
         )
-        return response['choices'][0]['message']['content']
+        return response.choices[0].message["content"]
     except Exception as e:
         return f"Ошибка при запросе к OpenAI API: {e}"
 
