@@ -19,7 +19,7 @@ async def get_gpt_response(user_question: str) -> str:
     """
     try:
         response = await openai.ChatCompletion.acreate(
-            model="gpt-4",
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": user_question}
