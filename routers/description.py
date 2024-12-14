@@ -10,7 +10,7 @@ desc_message = """
 👇 Delivered functions: 👇
 1️⃣✅ <b>''' /weather city '''</b> to get weather for now
 2️⃣❌ <i> [depreciated] </i> check birthdays and pin congrats with notify
-3️⃣❌ <i> [depreciated] </i> <b>''' /gpt your question '''</b> ChatGPT 
+3️⃣❌ <i> [need billing] </i> <b>''' /gpt your question '''</b> ChatGPT 
 """
 
 
