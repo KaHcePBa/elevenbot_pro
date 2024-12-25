@@ -9,3 +9,6 @@ default:
 
 development:
   DEBUG: true
+
+heroku:
+  DEBUG: false
