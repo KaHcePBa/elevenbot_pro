@@ -12,7 +12,7 @@ from services.new_year import get_random_year_message, year_message  # Импо�
 
 # Создаем отдельный Router для описания
 react_router = Router()
-
+year_message = get_random_year_message(year_message)
 
 # Обработка произвольных сообщений
 @react_router.message()
