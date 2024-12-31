@@ -12,7 +12,7 @@ from services.new_year import get_random_year_message, year_message  # Импо�
 
 # Создаем отдельный Router для описания
 react_router = Router()
-year_random_message = get_random_year_message(year_message)
+# year_random_message = get_random_year_message(year_message)
 
 # Обработка произвольных сообщений
 @react_router.message()
@@ -31,7 +31,7 @@ async def react_message(message: Message):
     elif 'здарова' in user_message:
         await message.answer(f'И тебе здарова, {user_id_fullname}!', parse_mode="HTML")
     elif 'с новым годом' in user_message:
-        await message.answer(f'{user_id_fullname}, {year_random_message}', parse_mode="HTML")
+        await message.answer(f'{user_id_fullname}, {get_random_year_message(year_message)}', parse_mode="HTML")
     elif '@elevenchat_bot что ты умеешь?' in user_message:
         await message.answer(f'А ты что умеешь, кожаный ублюдок?', parse_mode="HTML")
     elif 'ждем' in user_message:
