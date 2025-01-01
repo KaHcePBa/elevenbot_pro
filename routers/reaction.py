@@ -1,6 +1,6 @@
 from aiogram import Router
 from aiogram.types import Message
-from services.new_year import get_random_year_message, year_message  # Импорт роутера с рандомным текстом
+from services.list_year import get_random_year_message, year_message  # Импорт роутера с рандомным текстом
 
 # from dynaconf import LazySettings
 #

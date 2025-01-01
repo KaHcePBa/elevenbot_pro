@@ -1,5 +1,5 @@
 from decimal import Decimal, ROUND_HALF_UP
-from services.random_message import get_random_message, nah_message  # Импорт роутера с рандомным текстом
+from services.list_worst import get_random_message, nah_message  # Импорт роутера с рандомным текстом
 from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
