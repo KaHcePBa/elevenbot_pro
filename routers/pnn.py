@@ -13,6 +13,8 @@ async def pravonn_message(message: Message):
 👑👑👑 <b>Внимание!</b> 👑👑👑\n
 Для <b>{user_id_firstname}</b>
 предоставлено <b>Правонанахуй</b>!
+Ознакомиться с этим правом:
+https://youtu.be/XwaRMvNRC9o
     """
     await message.answer(pnn_message, parse_mode="HTML")
     await message.delete()
