@@ -10,30 +10,51 @@
 [//]: # ([![Dynaconf]&#40;https://img.shields.io/badge/Dynaconf-3.2.6-blue.svg&#41;]&#40;https://dynaconf.readthedocs.io/en/latest/&#41;)
 [//]: # ([![PyCharm]&#40;https://img.shields.io/badge/PyCharm-Community%20Edition-black.svg&#41;]&#40;https://www.jetbrains.com/pycharm/&#41;)
 
-# Telegram bot.
+# 📌 Telegram Bot
 
-### Active features:
-* type `/weather 'city'` to see the weather forecast through the [OpenWeatherMap](https://openweathermap.org/) API
-  * successful result `/weather tokyo`:
- 
-        TOKYO
-        clear
-        🌡 Temperature: 6°C
-        🌡 Feels: 5°C
-        🚿 Humidity: 55%
-        🌬 Wind: 1.54 m/s
-        🌬 Direction: Southwest 🌬
+A simple Telegram bot with multiple features, including weather updates and message responses.
+
+---
+
+## 🚀 Active Features
+
+### 🌦 Weather Forecast
+Get the current weather conditions using the [OpenWeatherMap](https://openweathermap.org/) API.
+
+- **Command:** `/weather 'city'`
+- **Example:** `/weather tokyo`
+- **Successful result:**
+  ```
+  TOKYO
+  ☀️ Clear
+  🌡 Temperature: 6°C
+  🌡 Feels like: 5°C
+  🚿 Humidity: 55%
+  🌬 Wind: 1.54 m/s
+  🧭 Direction: Southwest 🌬
+  ```
+- **Error handling:** If an incorrect city is provided, the bot will respond with a random message, e.g.:
+  > *"It's pretty clear that one of us made a mistake and wasted someone else's valuable time."*
   
-  * epic fail result `/weather toookyo`:
-    * random message example: 
-    
-    `It's pretty clear that one of us made a mistake and wasted someone else's valuable time.`
-    * sticker to message [`id: CAACAgIAAxkBAAEHZBljzZYeCnL_jRZDkG8KvkDAA1G1EAACggIAAi8P8AZ2H-Y5MFDEQS0E`] 
-* the bot listens to user messages and responds to some of them
-* more information will be added later.
+  Additionally, a sticker will be sent: `id: CAACAgIAAxkBAAEHZBljzZYeCnL_jRZDkG8KvkDAA1G1EAACggIAAi8P8AZ2H-Y5MFDEQS0E`
 
-### Depreciated features:
-* check birthdays and pin congrats with notify to users in groups
-  * _[Reason: Some conflicts with asynchronous jobs]_
-* `/gpt 'question'` communicate with ChatGPT 
-  * _[Reason: It is necessary to add a payment card to your ChatGPT profile.]_
+### 💬 Smart Replies
+The bot listens to user messages and responds to certain keywords or phrases.
+
+⚠️ *More features will be added later.*
+
+---
+
+## ❌ Deprecated Features
+
+### 🎉 Birthday Reminders
+- Used to check birthdays and pin congratulatory messages in groups.
+- *Reason for removal:* Conflict with asynchronous jobs.
+
+### 🤖 ChatGPT Integration
+- Command: `/gpt 'question'` to communicate with ChatGPT.
+- *Reason for removal:* Requires a payment method to be added to the ChatGPT profile.
+
+---
+
+Stay tuned for updates! 🚀
