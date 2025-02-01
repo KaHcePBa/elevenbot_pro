@@ -17,7 +17,7 @@ async def get_gpt_response(user_question: str) -> str:
     """
     try:
         response = await client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": user_question}
