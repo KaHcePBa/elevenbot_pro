@@ -14,8 +14,6 @@ from routers.promo import promo_router
 from routers.reaction import react_router
 from routers.weather_router import weather_router
 
-# from dynaconf import LazySettings
-
 # Логирование
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -23,12 +21,6 @@ logging.basicConfig(
     filename='bot.log'
 )
 logging.info('Start running...')
-
-# settings = LazySettings(
-#     settings_files=["settings.yaml", ".secrets.yaml"],  # Указываем YAML-файлы
-#     environments=True,  # Активируем поддержку окружений
-#     env="development"  # Устанавливаем окружение по умолчанию
-# )
 
 # Инициализация бота и основного роутера
 bot = Bot(token=os.getenv('BOT_TOKEN'))

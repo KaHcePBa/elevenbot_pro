@@ -1,15 +1,16 @@
+import os
 import requests
 
-from config.config import settings  # Импорт настроек из dynaconf
+# from config.config import settings  # Импорт настроек из dynaconf
 
 # Настройки
-dynaconf_settings = settings
+# dynaconf_settings = settings
 
 
 def get_weather(city_name: str) -> dict:
     # Получает данные о погоде для указанного города через OpenWeatherMap API.
-    # api_key = os.getenv('WEATHER_APIKEY')
-    api_key = dynaconf_settings.WEATHER_APIKEY
+    api_key = os.getenv('WEATHER_APIKEY')
+    # api_key = dynaconf_settings.WEATHER_APIKEY
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city_name}&units=metric&lang=ru&appid={api_key}'
     response = requests.get(url)
     return response.json()
