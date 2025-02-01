@@ -12,13 +12,11 @@ from services.list_year import get_random_year_message, year_message  # Импо
 
 # Создаем отдельный Router для описания
 react_router = Router()
-# year_random_message = get_random_year_message(year_message)
 
 # Обработка произвольных сообщений
 @react_router.message()
 async def react_message(message: Message):
     user_message = message.text.lower()
-    # user_id = message.from_user.id
     user_id_firstname = message.from_user.first_name
     user_id_fullname = message.from_user.full_name
 
@@ -38,8 +36,6 @@ async def react_message(message: Message):
         await message.reply(f'А я жду выходных... но походу их у меня никогда не будет', parse_mode="HTML")
     elif 'стакан' in user_message:
         await message.answer(f'Стаканный звон, стаканный звон, как много дум наводит он!', parse_mode="HTML")
-    # elif set(settings.FORBIDDEN_WORDS) & set(user_message.split()):
-    #     await message.answer_sticker(sticker='CAACAgIAAxkBAAEHHh9jtQ9Gds_m9MwvqWvtkP2fabQDuwACYAADTlzSKftFyO1xnR2cLQQ')
     elif 'картошки гэтаму хлопцу' == user_message:
         await message.answer(f'По просьбе {user_id_firstname} даю тебе картоху!', parse_mode="HTML")
         await message.answer_sticker(sticker='CAACAgIAAxkBAAEHHzhjtZjH2rDjxRheMMQM9aJBS0h-uQACcQADRA3PF9YqB3hPsRJeLQQ')
