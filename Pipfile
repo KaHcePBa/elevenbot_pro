@@ -10,6 +10,7 @@ aiogram = "*"
 aioschedule = "*"
 openai = "*"
 requests = "*"
+dynaconf = {extras = ["yaml"], version = "*"}
 
 [requires]
 python_version = "3.13"
