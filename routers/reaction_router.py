@@ -2,10 +2,10 @@ from aiogram import Router
 from aiogram.types import Message
 from services.list_year import get_random_year_message, year_message  # Импорт роутера с рандомным текстом
 
-# Создаем отдельный Router для описания
+# Create a separate Router for description
 react_router = Router()
 
-# Обработка произвольных сообщений
+# Handling arbitrary messages
 @react_router.message()
 async def react_message(message: Message):
     user_message = message.text.lower()

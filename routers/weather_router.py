@@ -1,5 +1,5 @@
 from decimal import Decimal, ROUND_HALF_UP
-from services.list_worst import get_random_message, nah_message  # Импорт роутера с рандомным текстом
+from services.list_worst import get_random_message, nah_message  # Import service with random text
 from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
@@ -17,13 +17,13 @@ async def weather_command(message: Message):
         await message.answer("Укажите город после команды /weather.")
         return
 
-    # Получаем данные о погоде
+    # Getting weather data
     weather_data = get_weather(city_name)
     code = weather_data.get('cod', '404')
     random_message = get_random_message(nah_message)
 
     if code != '404':
-        # Извлечение и округление данных о погоде
+        # Extracting and rounding weather data
         temperature = Decimal(weather_data['main']['temp']).quantize(Decimal('1'), rounding=ROUND_HALF_UP)
         feels_like = Decimal(weather_data['main']['feels_like']).quantize(Decimal('1'), rounding=ROUND_HALF_UP)
         humidity = weather_data['main']['humidity']
@@ -33,7 +33,7 @@ async def weather_command(message: Message):
         wind_direction = get_wind_direction(wind_degree)
         city = weather_data['name'].upper()
 
-        # Формирование ответа
+        # Forming a response
         reply_text = (
             f'🌍 <b>{city}</b>\n'
             f'<i>{weather_description}</i>\n\n'

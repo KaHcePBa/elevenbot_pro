@@ -2,7 +2,7 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
-# Создаем отдельный Router для описания
+# Create a separate Router for description
 pravo_router = Router()
 
 

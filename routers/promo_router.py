@@ -2,11 +2,11 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
-# Создаем отдельный Router для описания
+# Create a separate Router for description
 promo_router = Router()
 
 
-# Подключение других обработчиков
+# Connecting other handlers
 @promo_router.message(Command("promocodes"))
 async def promo_message(message: Message):
     prm_message = """

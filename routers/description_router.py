@@ -2,7 +2,7 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
-# Создаем отдельный Router для описания
+# Create a separate Router for description
 description_router = Router()
 
 desc_message = """

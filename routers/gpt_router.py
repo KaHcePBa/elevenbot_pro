@@ -5,7 +5,7 @@ from aiogram import Router
 from aiogram.types import Message
 from openai import AsyncOpenAI
 
-# Создаем отдельный Router для описания
+# Create a separate Router for description
 gpt_router = Router()
 
 client = AsyncOpenAI(api_key=os.getenv('OPENAI_APIKEY'))
@@ -13,7 +13,7 @@ client = AsyncOpenAI(api_key=os.getenv('OPENAI_APIKEY'))
 
 async def get_gpt_response(user_question: str) -> str:
     """
-    Обращается к OpenAI API и получает ответ от модели.
+    Accesses the OpenAI API and receives a response from the model.
     """
     try:
         response = await client.chat.completions.create(
@@ -25,20 +25,20 @@ async def get_gpt_response(user_question: str) -> str:
         )
         return response.choices[0].message.content
     except Exception as e:
-        return f"Ошибка при запросе к OpenAI API: {e}"
+        return f"Error when requesting OpenAI API: {e}"
 
 
 @gpt_router.message(F.text.startswith('/gpt'))
 async def handle_gpt_command(message: Message):
     """
-    Обрабатывает команду /gpt и отвечает пользователю.
+    Processes the /gpt command and responds to the user.
     """
-    # Извлекаем вопрос из команды
+    # Extracting the question from the command
     user_question = message.text.lstrip('/gpt').strip()
     if not user_question:
-        await message.answer("Пожалуйста, напишите вопрос после команды /gpt.")
+        await message.answer("Please write a question after the command /gpt.")
         return
 
-    await message.answer("Думаю над ответом...")
+    await message.answer("Thinking about the answer....")
     gpt_response = await get_gpt_response(user_question)
     await message.answer(gpt_response)
