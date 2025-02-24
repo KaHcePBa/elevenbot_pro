@@ -1,9 +1,10 @@
 from decimal import Decimal, ROUND_HALF_UP
-from services.phrase_service import get_random_message, automessage  # Import service with random text
+
 from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
+from services.phrase_service import automessage, get_random_message  # Import service with random text
 from services.weather_service import get_weather, get_wind_direction
 
 weather_router = Router()

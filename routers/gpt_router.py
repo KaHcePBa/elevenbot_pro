@@ -1,7 +1,6 @@
 import os
 
-from aiogram import F
-from aiogram import Router
+from aiogram import F, Router
 from aiogram.types import Message
 from openai import AsyncOpenAI
 

@@ -1,5 +1,7 @@
 import os
+
 import requests
+
 
 # from config.config import settings  # Импорт настроек из dynaconf
 

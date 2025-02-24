@@ -25,6 +25,7 @@ bot = Bot(token=os.getenv('BOT_TOKEN'))
 # bot = Bot(token=settings.BOT_TOKEN) # Dynaconf lazysettings
 router = Router()
 
+
 async def main():
     dp = Dispatcher()
     # Connect Router. If I create a new Router, I add it here. I can also disable them here.
