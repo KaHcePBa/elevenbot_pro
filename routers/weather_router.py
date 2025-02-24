@@ -1,10 +1,10 @@
 from decimal import Decimal, ROUND_HALF_UP
-from services.list_worst import get_random_message, nah_message  # Import service with random text
+from services.phrase_service import get_random_message, automessage  # Import service with random text
 from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
-from services.weather import get_weather, get_wind_direction
+from services.weather_service import get_weather, get_wind_direction
 
 weather_router = Router()
 
@@ -20,7 +20,7 @@ async def weather_command(message: Message):
     # Getting weather data
     weather_data = get_weather(city_name)
     code = weather_data.get('cod', '404')
-    random_message = get_random_message(nah_message)
+    random_message = get_random_message(automessage)
 
     if code != '404':
         # Extracting and rounding weather data

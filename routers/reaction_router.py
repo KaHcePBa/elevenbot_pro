@@ -1,6 +1,6 @@
 from aiogram import Router
 from aiogram.types import Message
-from services.list_year import get_random_year_message, year_message  # Импорт роутера с рандомным текстом
+from services.year_service import get_random_year_message, year_message  # Импорт роутера с рандомным текстом
 
 # Create a separate Router for description
 react_router = Router()
