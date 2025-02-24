@@ -3,13 +3,6 @@
 [![Requests](https://img.shields.io/badge/Requests-2.x-olive.svg)](https://docs.python-requests.org/en/latest/)
 [![Generic badge](https://img.shields.io/badge/deployed%20to-Heroku-darkviolet.svg)](https://www.heroku.com/)
 
-
-[//]: # ([![Aioschedule]&#40;https://img.shields.io/badge/Aioschedule-0.5.2-olive.svg&#41;]&#40;https://aioschedule.readthedocs.io/en/latest/&#41;)
-
-
-[//]: # ([![Dynaconf]&#40;https://img.shields.io/badge/Dynaconf-3.2.6-blue.svg&#41;]&#40;https://dynaconf.readthedocs.io/en/latest/&#41;)
-[//]: # ([![PyCharm]&#40;https://img.shields.io/badge/PyCharm-Community%20Edition-black.svg&#41;]&#40;https://www.jetbrains.com/pycharm/&#41;)
-
 # 📌 Telegram Bot
 
 A simple Telegram bot with multiple features, including weather updates and message responses.
@@ -19,6 +12,7 @@ A simple Telegram bot with multiple features, including weather updates and mess
 ## 🚀 Active Features
 
 ### 🌦 Weather Forecast
+
 Get the current weather conditions using the [OpenWeatherMap](https://openweathermap.org/) API.
 
 - **Command:** `/weather 'city'`
@@ -35,10 +29,11 @@ Get the current weather conditions using the [OpenWeatherMap](https://openweathe
   ```
 - **Error handling:** If an incorrect city is provided, the bot will respond with a random message, e.g.:
   > *"It's pretty clear that one of us made a mistake and wasted someone else's valuable time."*
-  
+
   Additionally, a sticker will be sent: `id: CAACAgIAAxkBAAEHZBljzZYeCnL_jRZDkG8KvkDAA1G1EAACggIAAi8P8AZ2H-Y5MFDEQS0E`
 
 ### 💬 Smart Replies
+
 The bot listens to user messages and responds to certain keywords or phrases.
 
 ⚠️ *More features will be added later.*
@@ -48,10 +43,12 @@ The bot listens to user messages and responds to certain keywords or phrases.
 ## ❌ Deprecated Features
 
 ### 🎉 Birthday Reminders
+
 - Used to check birthdays and pin congratulatory messages in groups.
 - *Reason for removal:* Conflict with asynchronous jobs.
 
 ### 🤖 ChatGPT Integration
+
 - Command: `/gpt 'question'` to communicate with ChatGPT.
 - *Reason for removal:* Requires a payment method to be added to the ChatGPT profile.
 
