@@ -22,7 +22,7 @@ logging.info('Start running...')
 
 # Initialization of the bot and the main router
 bot = Bot(token=os.getenv('BOT_TOKEN'))
-# bot = Bot(token=settings.BOT_TOKEN)
+# bot = Bot(token=settings.BOT_TOKEN) # Dynaconf lazysettings
 router = Router()
 
 async def main():
