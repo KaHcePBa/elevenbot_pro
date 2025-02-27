@@ -7,7 +7,7 @@ from openai import AsyncOpenAI
 # Create a separate Router for description
 gpt_router = Router()
 
-client = AsyncOpenAI(api_key=os.getenv('OPENAI_APIKEY'))
+client = AsyncOpenAI(api_key=os.getenv('DEEPSEEK_APIKEY'), base_url="https://api.deepseek.com")
 
 
 async def get_gpt_response(user_question: str) -> str:
@@ -16,7 +16,7 @@ async def get_gpt_response(user_question: str) -> str:
     """
     try:
         response = await client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="deepseek-chat",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": user_question}
