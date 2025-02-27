@@ -22,7 +22,7 @@ async def get_gpt_response(user_question: str) -> str:
             model="deepseek-chat",
             messages=[
                 {"role": "system",
-                 "content": "Ты — помощник, который отправляет код с использованием MarkdownV2 для форматирования в Telegram. Все блоки кода должны быть обернуты в тройные апострофы (```) с указанием языка программирования."},
+                 "content": "You are a friendly and helpful assistant. Your task is to answer users' questions in a clear, polite and informative manner. If a user asks about something complicated, try to explain it in simple words."},
                 {"role": "user", "content": user_question}
             ],
             stream=False
