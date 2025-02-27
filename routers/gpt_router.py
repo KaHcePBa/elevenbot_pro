@@ -22,7 +22,7 @@ async def get_gpt_response(user_question: str) -> str:
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": user_question}
             ],
-            stream=True
+            stream=False
         )
         return response.choices[0].message.content
     except Exception as e:
