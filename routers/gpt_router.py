@@ -8,6 +8,8 @@ from openai import AsyncOpenAI
 gpt_router = Router()
 
 client = AsyncOpenAI(api_key=os.getenv('DEEPSEEK_APIKEY'), base_url="https://api.deepseek.com")
+
+
 # client = AsyncOpenAI(api_key=os.getenv('OPENAI_APIKEY'))
 
 
@@ -19,7 +21,8 @@ async def get_gpt_response(user_question: str) -> str:
         response = await client.chat.completions.create(
             model="deepseek-chat",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "system",
+                 "content": "Ты — помощник, который отправляет код с использованием MarkdownV2 для форматирования в Telegram. Все блоки кода должны быть обернуты в тройные апострофы (```) с указанием языка программирования."},
                 {"role": "user", "content": user_question}
             ],
             stream=False
