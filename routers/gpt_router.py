@@ -8,6 +8,7 @@ from openai import AsyncOpenAI
 gpt_router = Router()
 
 client = AsyncOpenAI(api_key=os.getenv('DEEPSEEK_APIKEY'), base_url="https://api.deepseek.com")
+# client = AsyncOpenAI(api_key=os.getenv('OPENAI_APIKEY'))
 
 
 async def get_gpt_response(user_question: str) -> str:
@@ -24,7 +25,7 @@ async def get_gpt_response(user_question: str) -> str:
         )
         return response.choices[0].message.content
     except Exception as e:
-        return f"Error when requesting OpenAI API: {e}"
+        return f"Error during API request: {e}"
 
 
 @gpt_router.message(F.text.startswith('/gpt'))
@@ -38,6 +39,6 @@ async def handle_gpt_command(message: Message):
         await message.answer("Please write a question after the command /gpt.")
         return
 
-    await message.answer("Thinking about the answer....")
+    await message.answer("Thinking about the answer... Keep calm...")
     gpt_response = await get_gpt_response(user_question)
     await message.answer(gpt_response)
