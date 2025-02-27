@@ -38,7 +38,7 @@ The bot listens to user messages and responds to certain keywords or phrases.
 
 ### 🤖 DeepSeek Integration
 
-- Command: `/gpt 'question'` to communicate with ChatGPT (without context for now).
+- Command: `/gpt 'question'` to communicate with DeepSeek (without context for now).
 
 ⚠️ *More features will be added later.*
 
