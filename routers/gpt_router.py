@@ -21,8 +21,8 @@ async def get_gpt_response(user_question: str) -> str:
         response = await client.chat.completions.create(
             model="deepseek-chat",
             messages=[
-                # {"role": "system",
-                #  "content": "You are a friendly and helpful assistant. Your task is to answer users' questions in a clear, polite and informative manner. If a user asks about something complicated, try to explain it in simple words."},
+                {"role": "system",
+                 "content": "You are a friendly and helpful assistant. Your task is to answer users' questions in a short, clear, polite and informative manner. If a user asks about something complicated, try to explain it in simple words."},
                 {"role": "user", "content": user_question}
             ],
             stream=False
@@ -44,5 +44,5 @@ async def handle_gpt_command(message: Message):
         return
 
     await message.answer("Thinking about the answer... Keep calm...")
-    gpt_response = await get_gpt_response(user_question)
+    gpt_response = await get_gpt_response(user_question, parse_mode="Markdown")
     await message.answer(gpt_response)
