@@ -4,7 +4,7 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
-from features import automessage, get_random_message  # Import service with random text
+from features import malicious_message, get_random_message  # Import service with random text
 from features import get_weather, get_wind_direction
 
 weather_router = Router()
@@ -21,7 +21,7 @@ async def weather_command(message: Message):
     # Getting weather data
     weather_data = get_weather(city_name)
     code = weather_data.get('cod', '404')
-    random_message = get_random_message(automessage)
+    random_message = get_random_message(malicious_message)
 
     if code != '404':
         # Extracting and rounding weather data
