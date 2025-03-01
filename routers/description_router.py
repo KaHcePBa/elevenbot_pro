@@ -10,8 +10,6 @@ desc_message = """
 👇 Delivered functions: 👇
 1️⃣✅ <b><code>/weather city</code></b> to get weather 🌤️ for now
 2️⃣️✅ <b><code>/gpt your_question</code></b> ask DeepSeek a question. 🤖
-3️⃣️❌ <i>[depreciated]</i> сheck birthdays 🎉 and pin congratulations with notifications.
-4️⃣️❌ <i>[need billing]</i> <b><code>/gpt your_question</code></b> ask ChatGPT a question. 🤖
 ✨ <i>More features coming soon!</i> ✨
 """
 

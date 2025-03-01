@@ -40,22 +40,4 @@ The bot listens to user messages and responds to certain keywords or phrases.
 
 - Command: `/gpt 'question'` to communicate with DeepSeek (without context for now).
 
-⚠️ *More features will be added later.*
-
----
-
-## ❌ Deprecated Features
-
-### 🎉 Birthday Reminders
-
-- Used to check birthdays and pin congratulatory messages in groups.
-- *Reason for removal:* Conflict with asynchronous jobs.
-
-### 🤖 ChatGPT Integration
-
-- Command: `/gpt 'question'` to communicate with ChatGPT.
-- *Reason for removal:* Requires a payment method to be added to the ChatGPT profile.
-
----
-
 Stay tuned for updates! 🚀

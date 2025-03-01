@@ -21,8 +21,8 @@ async def get_gpt_response(user_question: str) -> str:
         response = await client.chat.completions.create(
             model="deepseek-chat",
             messages=[
-                {"role": "system",
-                 "content": "You are a friendly and helpful assistant. Your task is to answer users' questions in a clear, polite and informative manner. If a user asks about something complicated, try to explain it in simple words."},
+                # {"role": "system",
+                #  "content": "You are a friendly and helpful assistant. Your task is to answer users' questions in a clear, polite and informative manner. If a user asks about something complicated, try to explain it in simple words."},
                 {"role": "user", "content": user_question}
             ],
             stream=False
