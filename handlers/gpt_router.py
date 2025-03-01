@@ -44,5 +44,5 @@ async def handle_gpt_command(message: Message):
         return
 
     await message.answer("Thinking about the answer... Keep calm...")
-    gpt_response = await get_gpt_response(user_question, parse_mode="Markdown")
+    gpt_response = await get_gpt_response(user_question)
     await message.answer(gpt_response)
