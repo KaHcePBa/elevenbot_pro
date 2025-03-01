@@ -1,7 +1,7 @@
 from aiogram import Router
 from aiogram.types import Message
 
-from features import get_random_year_message, yearmessage
+from features import get_random_year_message, year_greeting
 
 react_router = Router()
 PARSE_MODE = "HTML"
@@ -10,7 +10,7 @@ RESPONSES = {
     "всем привет": "Привет всем!",
     "@elevenchat_bot": "Слушаю, мой господин...",
     "здарова": "И тебе здарова, {user_fullname}!",
-    "с новым годом": "{user_fullname}, {yearmessage}",
+    "с новым годом": "{user_fullname}, {year_greeting}",
     "@elevenchat_bot что ты умеешь?": "А ты что умеешь, кожаный ублюдок?",
     "ждем": "А я жду выходных... но походу их у меня никогда не будет",
     "стакан": "Стаканный звон, стаканный звон, как много дум наводит он!",
@@ -24,7 +24,7 @@ async def react_message(message: Message):
     user_data = {
         "user_firstname": message.from_user.first_name,
         "user_fullname": message.from_user.full_name,
-        "yearmessage": get_random_year_message(yearmessage),
+        "year_greeting": get_random_year_message(year_greeting),
     }
 
     if user_text in RESPONSES:
