@@ -5,12 +5,12 @@ import os
 from aiogram import Bot, Dispatcher, Router
 
 # Import Routers
-from routers.description_router import description_router
-from routers.gpt_router import gpt_router  # gpt router import
-from routers.pravo_router import pravo_router
-from routers.promo_router import promo_router
-from routers.reaction_router import react_router
-from routers.weather_router import weather_router
+from handlers.description_router import description_router
+from handlers.gpt_router import gpt_router  # gpt router import
+from handlers.pravo_router import pravo_router
+from handlers.promo_router import promo_router
+from handlers.reaction_router import react_router
+from handlers.weather_router import weather_router
 
 # Logging
 logging.basicConfig(
