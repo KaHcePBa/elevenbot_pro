@@ -18,4 +18,4 @@ async def handle_gpt_command(message: Message):
 
     await message.answer("Hold on, your request is being generated....")
     ai_response = await get_ai_response(user_question)
-    await message.answer(ai_response, parse_mode=ParseMode.MARKDOWN_V2)
+    await message.answer(ai_response, parse_mode=ParseMode.HTML)
