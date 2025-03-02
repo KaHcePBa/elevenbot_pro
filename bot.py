@@ -2,7 +2,7 @@ import asyncio
 import logging
 import os
 
-from aiogram import Bot, Dispatcher, Router
+from aiogram import Bot, Dispatcher
 
 # Import Routers
 from handlers import ai_router, description_router, pravo_router, promo_router, react_router, weather_router
@@ -20,24 +20,16 @@ bot = Bot(token=os.getenv('BOT_TOKEN'))
 
 
 # bot = Bot(token=settings.BOT_TOKEN) # Dynaconf lazysettings
-# router = Router()
-
 
 async def main():
     dp = Dispatcher()
     # Connect Router. If I create a new Router, I add it here. I can also disable them here.
     dp.include_routers(description_router,
-                      ai_router,
-                      pravo_router,
-                      weather_router,
-                      promo_router,
-                      react_router)
-    # dp.include_router(ai_router)
-    # dp.include_router(pravo_router)
-    # dp.include_router(weather_router)
-    # dp.include_router(promo_router)
-    # dp.include_router(react_router)
-    # dp.include_router(router)
+                       ai_router,
+                       pravo_router,
+                       weather_router,
+                       promo_router,
+                       react_router)
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
