@@ -4,10 +4,10 @@ from aiogram.types import Message
 from app import get_ai_response
 
 # Create a separate Router for description
-gpt_router = Router()
+ai_router = Router()
 
 
-@gpt_router.message(F.text.startswith('/ai'))
+@ai_router.message(F.text.startswith('/ai'))
 async def handle_gpt_command(message: Message):
     """
     Processes the /ai command and responds to the user.
