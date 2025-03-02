@@ -2,7 +2,7 @@ import asyncio
 import logging
 import os
 
-from aiogram import Bot, Dispatcher
+from aiogram import Bot, Dispatcher, Router
 
 # Import Routers
 from handlers import ai_router, description_router, pravo_router, promo_router, react_router, weather_router
@@ -26,7 +26,7 @@ bot = Bot(token=os.getenv('BOT_TOKEN'))
 async def main():
     dp = Dispatcher()
     # Connect Router. If I create a new Router, I add it here. I can also disable them here.
-    dp.include_router(description_router,
+    dp.include_routers(description_router,
                       ai_router,
                       pravo_router,
                       weather_router,
