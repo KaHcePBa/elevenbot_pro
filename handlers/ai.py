@@ -15,6 +15,6 @@ async def handle_gpt_command(message: Message):
         await message.answer("Please write a question after the command /ai.")
         return
 
-    await message.answer("Thinking about the answer... Keep calm...")
+    await message.answer("Hold on, your request is being generated....")
     ai_response = await get_ai_response(user_question)
     await message.answer(ai_response)
