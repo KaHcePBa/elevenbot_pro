@@ -5,7 +5,11 @@ import os
 from aiogram import Bot, Dispatcher
 
 # Import Routers
-from handlers import ai_router, about_router, pravo_router, promo_router, react_router, weather_router
+from handlers import about_router, ai_router, pravo_router, promo_router, react_router, weather_router
+
+DEBUG = os.getenv('DEBUG', 'true').lower() == 'true'
+if os.getenv('ENVIRONMENT') == 'heroku':
+    DEBUG = False
 
 # Logging
 logging.basicConfig(
