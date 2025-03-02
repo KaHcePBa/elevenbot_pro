@@ -9,9 +9,6 @@ ai_router = Router()
 
 @ai_router.message(F.text.startswith('/ai'))
 async def handle_gpt_command(message: Message):
-    """
-    Processes the /ai command and responds to the user.
-    """
     # Extracting the question from the command
     user_question = message.text.lstrip('/ai').strip()
     if not user_question:
