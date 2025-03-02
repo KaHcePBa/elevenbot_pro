@@ -9,7 +9,7 @@ A simple Telegram bot with multiple features, including weather updates and mess
 
 ---
 
-## 🚀 Active Features
+## 🚀 Features
 
 ### 🌦 Weather Forecast
 
