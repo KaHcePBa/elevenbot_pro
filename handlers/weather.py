@@ -4,8 +4,8 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
-from features import malicious_message, get_random_message  # Import service with random text
-from features import get_weather, get_wind_direction
+from app import malicious_message, get_random_message  # Import service with random text
+from app import get_weather, get_wind_direction
 
 weather_router = Router()
 

@@ -1,7 +1,7 @@
 from aiogram import Router
 from aiogram.types import Message
 
-from features import get_random_year_message, year_greeting
+from app import get_random_year_message, year_greeting
 
 react_router = Router()
 PARSE_MODE = "HTML"

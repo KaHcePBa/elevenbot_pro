@@ -14,7 +14,7 @@ TRANSLATIONS = {
     },
     'en': {
         'promo_title': '🏎 Promo code <b>ELEVEN</b>',
-        'promo_description': 'for car-sharing features <b>(Anytime, HELLO, Multimotors)</b>.',
+        'promo_description': 'for car-sharing app <b>(Anytime, HELLO, Multimotors)</b>.',
         'promo_instruction': 'The promo code must be entered <b>once, during registration</b>.',
     }
 }
