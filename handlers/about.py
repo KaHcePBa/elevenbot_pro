@@ -17,3 +17,7 @@ Voice-recognition technology?\nIn a lift? In Scotland? 🤔\n
 async def about_message(message: Message):
     await message.answer(info_message, parse_mode="HTML")
     await message.delete()
+
+@about_router.message(Command("start"))
+async def start_message(message: Message):
+    await message.answer(info_message, parse_mode="HTML")
