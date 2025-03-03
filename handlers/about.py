@@ -1,6 +1,6 @@
 from aiogram import Router
 from aiogram.filters import Command
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from aiogram.types import Message
 
 about_router = Router()
 
@@ -20,10 +20,4 @@ async def about_message(message: Message):
 
 @about_router.message(Command("start"))
 async def start_message(message: Message):
-    keyboard = InlineKeyboardMarkup(
-        inline_keyboard=[
-            [InlineKeyboardButton(text="🌦 Узнать погоду", switch_inline_query_current_chat="/weather ")]
-        ]
-    )
-    await message.answer("Выберите действие:", reply_markup=keyboard)
     await message.answer(info_message, parse_mode="HTML")
