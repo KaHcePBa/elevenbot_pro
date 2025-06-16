@@ -3,13 +3,13 @@
 [![Requests](https://img.shields.io/badge/Requests-2.x-olive.svg)](https://docs.python-requests.org/en/latest/)
 [![Generic badge](https://img.shields.io/badge/deployed%20to-Heroku-darkviolet.svg)](https://www.heroku.com/)
 
-# 📌 Telegram Bot
+# Telegram Bot
 
 A simple Telegram bot with multiple features, including weather updates and message responses.
 
 ---
 
-## 🚀 Features
+## Features
 
 ### 🌦 Weather Forecast
 
@@ -32,12 +32,12 @@ Get the current weather conditions using the [OpenWeatherMap](https://openweathe
 
   Additionally, a sticker will be sent: `id: CAACAgIAAxkBAAEHZBljzZYeCnL_jRZDkG8KvkDAA1G1EAACggIAAi8P8AZ2H-Y5MFDEQS0E`
 
-### 💬 Smart Replies
+### Smart Replies
 
 The bot listens to user messages and responds to certain keywords or phrases.
 
-### 🤖 DeepSeek Integration
+### DeepSeek Integration
 
 - Command: `/ai 'question'` to communicate with DeepSeek (without context for now).
 
-Stay tuned for updates! 🚀
+Stay tuned for updates!
