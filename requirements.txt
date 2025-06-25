@@ -23,7 +23,7 @@ multidict==6.5.1
 openai==1.91.0
 propcache==0.3.2
 pydantic==2.11.7
-pydantic_core==2.33.2
+pydantic_core==2.35.1
 requests==2.32.4
 rfc3986==2.0.0
 ruamel.yaml==0.18.14
