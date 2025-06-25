@@ -15,7 +15,8 @@ if os.getenv('ENVIRONMENT') == 'heroku':
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.DEBUG,
-    filename='bot.log'
+    filename='bot.log',
+    filemode='w'
 )
 logging.info('Start running...')
 
