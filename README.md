@@ -5,39 +5,36 @@
 
 # Telegram Bot
 
-A simple Telegram bot with multiple features, including weather updates and message responses.
-
----
+A professional Telegram bot offering various functionalities, including weather updates and intelligent message responses.
 
 ## Features
 
 ### 🌦 Weather Forecast
+Retrieve current weather conditions via the OpenWeatherMap API.
 
-Get the current weather conditions using the [OpenWeatherMap](https://openweathermap.org/) API.
+- **Command**: `/weather <city>`
+- **Example**: `/weather tokyo`
+- **Output**:
 
-- **Command:** `/weather 'city'`
-- **Example:** `/weather tokyo`
-- **Successful result:**
-  ```
-  TOKYO
-  ☀️ Clear
-  🌡 Temperature: 6°C
-  🌡 Feels like: 5°C
-  🚿 Humidity: 55%
-  🌬 Wind: 1.54 m/s
-  🧭 Direction: Southwest 🌬
-  ```
-- **Error handling:** If an incorrect city is provided, the bot will respond with a random message, e.g.:
-  > *"It's pretty clear that one of us made a mistake and wasted someone else's valuable time."*
+```plaintext 
+TOKYO
+Condition: Clear ☀️
+Temperature: 6°C 🌡
+Feels like: 5°C 🌡
+Humidity: 55% 🚿
+Wind: 1.54 m/s 🌬
+Direction: Southwest 🧭
+```
 
-  Additionally, a sticker will be sent: `id: CAACAgIAAxkBAAEHZBljzZYeCnL_jRZDkG8KvkDAA1G1EAACggIAAi8P8AZ2H-Y5MFDEQS0E`
+- **Error Handling**: If an invalid city is entered, the bot responds with a random message, e.g.:
+> "It's pretty clear that one of us made a mistake and wasted someone else's valuable time."
+Additionally, a sticker is sent (ID: CAACAgIAAxkBAAEHZBljzZYeCnL_jRZDkG8KvkDAA1G1EAACggIAAi8P8AZ2H-Y5MFDEQS0E).
 
 ### Smart Replies
+The bot detects specific keywords or phrases in user messages and provides tailored responses.
 
-The bot listens to user messages and responds to certain keywords or phrases.
+### AI Integration
+- **Command**: `/ai <question>`
+Interact with AI (context-free for now).
 
-### DeepSeek Integration
-
-- Command: `/ai 'question'` to communicate with DeepSeek (without context for now).
-
-Stay tuned for updates!
+Stay tuned for further enhancements!
