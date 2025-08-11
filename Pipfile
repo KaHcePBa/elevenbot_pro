@@ -6,11 +6,11 @@ name = "pypi"
 [dev-packages]
 
 [packages]
-aiogram = "*"
 aioschedule = "*"
 openai = "*"
 requests = "*"
 dynaconf = {extras = ["yaml"], version = "*"}
+aiogram = "*"
 
 [requires]
 python_version = "3.13"
