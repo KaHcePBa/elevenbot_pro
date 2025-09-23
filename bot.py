@@ -6,6 +6,7 @@ from aiogram import Bot, Dispatcher
 
 # Import Routers
 from handlers import about_router, ai_router, pravo_router, promo_router, react_router, weather_router
+# from handlers import ds_router
 
 DEBUG = os.getenv('DEBUG', 'true').lower() == 'true'
 if os.getenv('ENVIRONMENT') == 'heroku':
@@ -31,6 +32,7 @@ async def main():
     # Connect Router. If I create a new Router, I add it here. I can also disable them here.
     dp.include_routers(about_router,
                        ai_router,
+                       # ds_router,
                        pravo_router,
                        weather_router,
                        promo_router,
