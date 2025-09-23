@@ -1,6 +1,5 @@
 from handlers.about import about_router
-# from handlers.ds import ds_router
-from handlers.open_ai import ai_router
+from handlers.ds import ds_router
 from handlers.pravo import pravo_router
 from handlers.promo import promo_router
 from handlers.reaction import react_router
