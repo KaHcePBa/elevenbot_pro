@@ -9,7 +9,7 @@ instructions = os.getenv('INSTRUCTIONS')
 # client = AsyncOpenAI(api_key=os.getenv('OPENAI_APIKEY'))
 
 
-async def get_ds_response(user_question: str) -> str:
+async def get_deepseek_response(user_question: str) -> str:
     """
     Accesses the OpenAI API and receives a response from the model.
     """

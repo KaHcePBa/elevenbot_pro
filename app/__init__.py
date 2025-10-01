@@ -1,4 +1,4 @@
-from app.ds import get_ds_response
-from app.malicious_phrases import get_random_message, malicious_message
-from app.open_weather import get_weather, get_wind_direction
-from app.year_greetings import get_random_year_message, year_greeting
+from app.deepseek_app import get_deepseek_response
+from app.malicious_phrases_app import get_random_message, malicious_message
+from app.open_weather_app import get_weather, get_wind_direction
+from app.year_greetings_app import get_random_year_message, year_greeting
