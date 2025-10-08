@@ -1,7 +1,7 @@
 from dynaconf import LazySettings
 
 settings = LazySettings(
-    settings_files=['settings.yaml', '.secrets.yaml'],
+    settings_files=['settings.toml', '.secrets.toml'],
     envvar_prefix="DYNACONF",
     environments=True,
     env='development',

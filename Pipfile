@@ -9,7 +9,7 @@ name = "pypi"
 aioschedule = "*"
 openai = "*"
 requests = "*"
-dynaconf = {extras = ["yaml"], version = "*"}
+dynaconf = "*"
 aiogram = "*"
 
 [requires]

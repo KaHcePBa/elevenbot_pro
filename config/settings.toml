@@ -1,0 +1,14 @@
+[default]
+BOT_TOKEN = "secret"
+DEBUG = false
+BIRTHDAYS = "secret"
+CHAT_ID = "secret"
+WEATHER_APIKEY = "secret"
+OPENAI_APIKEY = "secret"
+DEEPSEEK_APIKEY = "secret"
+
+[development]
+DEBUG = true
+
+[heroku]
+DEBUG = false

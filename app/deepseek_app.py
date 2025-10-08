@@ -14,15 +14,10 @@ async def get_deepseek_response(user_question: str) -> str:
     Accesses the OpenAI API and receives a response from the model.
     """
     try:
-        response = await client.chat.completions.create(
-            model="deepseek-chat",
-            messages=[
-                {"role": "system",
-                 "content": instructions},
-                {"role": "user", "content": user_question}
-            ],
-            stream=False
-        )
+        response = await client.chat.completions.create(model="deepseek-chat",
+                                                        messages=[{"role": "system", "content": instructions},
+                                                                  {"role": "user", "content": user_question}],
+                                                        stream=False)
         return response.choices[0].message.content
     except Exception as e:
         return f"Error during API request: {e}"
