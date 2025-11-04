@@ -6,6 +6,10 @@ CHAT_ID = "secret"
 WEATHER_APIKEY = "secret"
 OPENAI_APIKEY = "secret"
 DEEPSEEK_APIKEY = "secret"
+DEFAULT_PROVIDER = "secret"
+OPENAI_MODEL = "secret"
+DEEPSEEK_MODEL = "secret"
+DEEPSEEK_BASE_URL = "secret"
 
 [development]
 DEBUG = true
