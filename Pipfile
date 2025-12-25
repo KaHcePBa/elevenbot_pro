@@ -7,10 +7,10 @@ name = "pypi"
 
 [packages]
 aioschedule = "*"
-openai = "*"
 requests = "*"
 dynaconf = "*"
-aiogram = "*"
+aiogram = "==3.23.0"
+openai = "==2.14.0"
 
 [requires]
 python_version = "3.13"
