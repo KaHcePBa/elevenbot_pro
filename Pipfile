@@ -9,8 +9,9 @@ name = "pypi"
 aioschedule = "*"
 requests = "*"
 dynaconf = "*"
-aiogram = "==3.23.0"
 openai = "==2.14.0"
+black = "*"
+aiogram = "==3.24.0"
 
 [requires]
 python_version = "3.13"
