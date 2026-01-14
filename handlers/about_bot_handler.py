@@ -8,7 +8,7 @@ info_message = """
 Voice-recognition technology?\nIn a lift? In Scotland? 🤔\n
 👇 <b>Delivered functions:</b> 👇
 1️⃣ <code>/weather city</code> to get weather 🌤️ for now
-2️⃣️ <code>/ai your_question</code> ask AI (Deepseek 🤖) a question
+2️⃣️ <code>/ai your_question</code> ask AI (Chat GPT / Deepseek 🤖) a question
 ✨ <i>More app coming soon!</i> ✨
 """
 
