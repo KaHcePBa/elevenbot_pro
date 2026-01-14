@@ -4,7 +4,9 @@ from typing import Tuple
 from openai import AsyncOpenAI
 
 # Config
-DEFAULT_PROVIDER = (os.getenv("DEFAULT_PROVIDER") or "OPENAI").upper()  # OPENAI | DEEPSEEK
+DEFAULT_PROVIDER = (
+    os.getenv("DEFAULT_PROVIDER") or "OPENAI"
+).upper()  # OPENAI | DEEPSEEK
 INSTRUCTIONS = os.getenv("INSTRUCTIONS")
 
 # OpenAI
@@ -16,7 +18,9 @@ DEEPSEEK_APIKEY = os.getenv("DEEPSEEK_APIKEY")
 DEEPSEEK_MODEL = os.getenv("DEEPSEEK_MODEL") or "deepseek-chat"
 DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL") or "https://api.deepseek.com"
 
-client = AsyncOpenAI(api_key=os.getenv('DEEPSEEK_APIKEY'), base_url="https://api.deepseek.com")
+client = AsyncOpenAI(
+    api_key=os.getenv("DEEPSEEK_APIKEY"), base_url="https://api.deepseek.com"
+)
 
 _openai_client: AsyncOpenAI | None = None
 _deepseek_client: AsyncOpenAI | None = None
@@ -36,7 +40,9 @@ def _get_deepseek() -> Tuple[AsyncOpenAI, str]:
     if not DEEPSEEK_APIKEY:
         raise RuntimeError("DEEPSEEK_APIKEY не задан в окружении.")
     if _deepseek_client is None:
-        _deepseek_client = AsyncOpenAI(api_key=DEEPSEEK_APIKEY, base_url=DEEPSEEK_BASE_URL)
+        _deepseek_client = AsyncOpenAI(
+            api_key=DEEPSEEK_APIKEY, base_url=DEEPSEEK_BASE_URL
+        )
     return _deepseek_client, DEEPSEEK_MODEL
 
 
