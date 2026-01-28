@@ -11,7 +11,7 @@ INSTRUCTIONS = os.getenv("INSTRUCTIONS")
 
 # OpenAI
 OPENAI_APIKEY = os.getenv("OPENAI_APIKEY")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL") or "gpt-4.1-mini"
+OPENAI_MODEL = os.getenv("OPENAI_MODEL") or "gpt-4o-mini"
 
 # DeepSeek
 DEEPSEEK_APIKEY = os.getenv("DEEPSEEK_APIKEY")
